@@ -15,7 +15,7 @@ public class HW17RickAndMortyApiTestEpisode {
         Episode episode =om.readValue(Rest.getRest("https://rickandmortyapi.com/api/episode"),Episode.class);
         do{
             for (Result l: episode.results){
-                System.out.print(l.name+" = "+l.air_date+": ");
+                System.out.print(l.name+" -> "+l.air_date);
                 System.out.println();
             }
             if(episode.info.next!=null){
