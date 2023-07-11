@@ -5,7 +5,7 @@ package jsonObj.Location;
 Root root = om.readValue(myJsonString, Root.class); */
 
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Location {
     public Info info;

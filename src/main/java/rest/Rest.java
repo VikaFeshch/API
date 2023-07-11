@@ -25,4 +25,15 @@ public class Rest {
     public static String getRest(String url) throws IOException {
         return EntityUtils.toString(HttpClientBuilder.create().build().execute(new HttpGet(url)).getEntity());
     }*/
+
+    public static int getStatusCode(String url){
+        CloseableHttpClient httpClient= HttpClientBuilder.create().build();
+        HttpResponse response = null;
+        try {
+            response=httpClient.execute(new HttpGet(url));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return response.getStatusLine().getStatusCode();
+    }
 }
