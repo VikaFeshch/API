@@ -10,7 +10,6 @@ public class HW17RickAndMortyApiTestEpisode {
 
     @Test
     public void test1() throws IOException {
-        int i=0;
         ObjectMapper om = new ObjectMapper();
         Episode episode =om.readValue(Rest.getRest("https://rickandmortyapi.com/api/episode"),Episode.class);
         do{
@@ -20,8 +19,7 @@ public class HW17RickAndMortyApiTestEpisode {
             }
             if(episode.info.next!=null){
                 episode=om.readValue(Rest.getRest(episode.info.next),Episode.class);
-            }
-            i++;
-        }while (i<episode.info.pages);//(episode.info.next!=null); якщо так перевіряти, не заходимо на останню сторінку зовсім
+            } else break;
+        }while (true);
     }
 }
