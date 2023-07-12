@@ -19,7 +19,9 @@ public class HW17RickAndMortyApiTestEpisode {
             }
             if(episode.info.next!=null){
                 episode=om.readValue(Rest.getRest(episode.info.next),Episode.class);
-            } else break;
+            } else {
+                break;
+            }
         }while (true);
     }
 }
